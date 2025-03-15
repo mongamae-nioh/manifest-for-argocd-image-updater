@@ -4,7 +4,6 @@ metadata:
   name: app
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    argocd.argoproj.io/hook: PreSync
 spec:
   selector:
     app: app
