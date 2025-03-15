@@ -6,3 +6,4 @@ resources:
 - database-service.yaml
 - app-deployment.yaml
 - app-service.yaml
+- migration-job.yaml
