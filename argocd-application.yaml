@@ -3,6 +3,13 @@ kind: Application
 metadata:
   name: test-app
   namespace: argo-cd
+  annotations:
+    argocd-image-updater.argoproj.io/write-back-method: git:repocreds
+    argocd-image-updater.argoproj.io/write-back-target: kustomization
+    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/mongamae-nioh/test-app
+    argocd-image-updater.argoproj.io/my-image.update-strategy: newest-build
+    argocd-image-updater.argoproj.io/my-image.ignore-tags: latest
+    argocd-image-updater.argoproj.io/git-branch: main:feature/image-updater{{range .Images}}-{{.Name}}-{{.NewTag}}{{end}}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
