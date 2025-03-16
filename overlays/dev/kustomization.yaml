@@ -4,4 +4,4 @@ resources:
 - ../../base
 images:
 - name: ghcr.io/mongamae-nioh/test-app
-  newTag: v0.0.1
+  newTag: v0.0.2
